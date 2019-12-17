@@ -27,7 +27,8 @@ mounted(){
       },
 
       calcConversion: function(){
-        return this.enteredEuros * this.selectedCurrency
+        let result = this.enteredEuros * this.selectedCurrency
+        return result.toFixed(2);
       }
     }
 
