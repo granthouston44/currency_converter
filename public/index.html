@@ -25,6 +25,7 @@
           <option diasbled value="">Select a Currency</option>
           <option v-for="(rate, currency) in currencies" :value="rate">{{currency}}</option>
         </select>
+        <h3>Converted amount: {{calculatedConversion}}</h3>
 
       </div>
 

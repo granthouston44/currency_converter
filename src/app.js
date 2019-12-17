@@ -6,7 +6,14 @@ document.addEventListener('DOMContentLoaded', () => {
     el: '#app',
     data: {
       currencies: [],
-      enteredEuros: 0
+      enteredEuros: 0,
+      selectedCurrency: null
+    },
+
+    computed: {
+      calculatedConversion: function(){
+        return this.calcConversion()
+      }
     },
 
 mounted(){
@@ -17,7 +24,10 @@ mounted(){
         fetch("https://api.exchangeratesapi.io/latest")
         .then(result => result.json())
         .then(currencies => this.currencies = currencies.rates)
+      },
 
+      calcConversion: function(){
+        return this.enteredEuros * this.selectedCurrency
       }
     }
 
