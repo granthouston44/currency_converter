@@ -13,8 +13,8 @@
 
       <h3>Current Rates</h3>
         <ul>
-          <li v-for="(currency) in currencies" >
-            <span>{{currency}}</span>      
+          <li v-for="(rate, currency) in currencies" >
+            <span>{{currency}}: {{rate}}</span>      
           </li>
         </ul>
 
