@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     el: '#app',
     data: {
-      currencies: []
+      currencies: [],
+      enteredEuros: 0
     },
 
 mounted(){

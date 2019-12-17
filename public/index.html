@@ -14,11 +14,19 @@
       <h3>Current Rates</h3>
         <ul>
           <li v-for="(rate, currency) in currencies" >
-            <span>{{currency}}: {{rate}}</span>      
+            <span>{{currency}}: {{rate}}</span>
           </li>
         </ul>
+      <div id="convert-currency">
+      <h5>Enter the currency you'd like to convert</h5>
 
+        <input type="number" name="currency-convert" v-model.number="enteredEuros">
+        <select id="currency_select" v-model="selectedCurrency">
+          <option diasbled value="">Select a Currency</option>
+          <option v-for="(rate, currency) in currencies" :value="rate">{{currency}}</option>
+        </select>
 
+      </div>
 
 
 
