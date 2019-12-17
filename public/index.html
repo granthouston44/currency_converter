@@ -17,7 +17,7 @@
             <span>{{currency}}: {{rate}}</span>
           </li>
         </ul>
-      <div id="convert-currency">
+      <div id="convert-eur-to-currency">
       <h5>Enter the currency you'd like to convert</h5>
 
         <input type="number" name="currency-convert" v-model.number="enteredEuros">
@@ -25,10 +25,35 @@
           <option diasbled value="">Select a Currency</option>
           <option v-for="(rate, currency) in currencies" :value="rate">{{currency}}</option>
         </select>
-        <h3>Converted amount: {{calculatedConversion}}</h3>
+        <h3>Converted amount:  {{calculatedEurosConversion}}</h3>
 
       </div>
 
+
+      <div id="convert-currency-to-eur">
+        <h5>Select the currency you'd like to convert to Euros</h5>
+        <select id="currency_select" v-model="selectedCurrencyToEuros">
+          <option diasbled value="">Select a Currency</option>
+          <option v-for="(rate, currency) in currencies" :value="rate">{{currency}}</option>
+        </select>
+        <input type="number" name="currency-convert-to-euros" v-model.number="enteredCurrency">
+        <h3>Converted amount:  {{calculatedCurrencyConversion}}</h3>
+
+      </div>
+
+      <div id="convert-currency-to-currency">
+        <h5>Choose a currency and convert it to another</h5>
+        <select id="currency_select" v-model="currency1">
+          <option diasbled value="">Select a Currency</option>
+          <option v-for="(rate, currency) in currencies" :value="rate">{{currency}}</option>
+        </select>
+        <input type="number" name="currency-convert-to-currency" v-model.number="enteredCurrency1">
+        <select id="currency_select" v-model="currency2">
+          <option diasbled value="">Select a Currency</option>
+          <option v-for="(rate, currency) in currencies" :value="rate">{{currency}}</option>
+        </select>
+        <h3>Converted amount: {{calculcatedCurrencyToCurrency}}</h3>
+      </div>
 
 
     </div>
